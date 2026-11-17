@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Ask Jeeves Vmi</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ask_jeeves_vmi</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	
+	<!-- App Transport Security - Allow HTTP connections for noVNC -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<!-- Allow all HTTP connections (for development/internal servers) -->
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<!-- Allow arbitrary loads in web content (WebView) -->
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
+		<!-- Allow local networking -->
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+		<!-- Specific domain exceptions -->
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>18.220.3.254</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionMinimumTLSVersion</key>
+				<string>TLSv1.0</string>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+			</dict>
+			<!-- Allow localhost for testing -->
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	
+	<!-- Location Permissions - REQUIRED FOR iOS -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app requires location access for workspace security and geofence validation.</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>This app requires continuous location access for secure workspace monitoring.</string>
+
+<key>NSLocationAlwaysUsageDescription</key>
+<string>This app requires location access to validate authorized workspace usage.</string>
+	<!-- Location Background Mode -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+		<string>fetch</string>
+	</array>
+	
+	<!-- Privacy - Location Temporary Usage Description -->
+	<key>NSLocationTemporaryUsageDescriptionDictionary</key>
+	<dict>
+		<key>SecurityValidation</key>
+		<string>Location is required to validate your authorized geofence for secure vault access.</string>
+	</dict>
+	
+	<!-- Location Accuracy Authorization (iOS 14+) -->
+	<key>NSLocationDefaultAccuracyReduced</key>
+	<false/>
+	
+	<!-- Privacy - Location Usage Description (Legacy iOS) -->
+	<key>NSLocationUsageDescription</key>
+	<string>This app requires location access to validate your geofence and ensure secure access to the vault.</string>
+	
+	<!-- Camera Permission -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires camera access for document scanning and secure verification.</string>
+	
+	<!-- Microphone Permission -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires microphone access for voice authentication and secure communication.</string>
+	
+	<!-- Speech Recognition Permission -->
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>This app uses speech recognition to convert your voice to text for messaging.</string>
+	
+	<!-- Photo Library Permission -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires photo library access to save and retrieve secure documents.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app needs permission to save secure documents to your photo library.</string>
+	
+	<!-- Face ID Permission -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app uses Face ID for secure biometric authentication.</string>
+	
+	<!-- Motion & Fitness (for additional security validation) -->
+	<key>NSMotionUsageDescription</key>
+	<string>Motion data helps validate device authenticity and prevent unauthorized access.</string>
+	
+	<!-- Local Network Permission (iOS 14+) -->
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>This app requires local network access to communicate with devices on your network for secure operations.</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_services._tcp</string>
+	</array>
+</dict>
+</plist>
